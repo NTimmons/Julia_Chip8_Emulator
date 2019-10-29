@@ -654,8 +654,27 @@ function DrawSceneOpenGL()
     GLFW.PollEvents()    
 end
 
+function GetKeyState(key)
+     return ccall((:GetKeyPressed, "WindowsKeypressLibrary.dll"), Bool, (Cuchar,), key)
+end
+
 function ReadKeyState()
-    
+    key[1] = GetKeyState('1')
+    key[2] = GetKeyState('2')
+    key[3] = GetKeyState('3')
+    key[4] = GetKeyState('4')
+    key[5] = GetKeyState('Q')
+    key[6] = GetKeyState('W')
+    key[7] = GetKeyState('E')
+    key[8] = GetKeyState('R')
+    key[9] = GetKeyState('A')
+    key[10] = GetKeyState('S')
+    key[11] = GetKeyState('D')
+    key[12] = GetKeyState('F')
+    key[13] = GetKeyState('Z')
+    key[14] = GetKeyState('X')
+    key[15] = GetKeyState('C')
+    key[16] = GetKeyState('V')
 end
 
 function Chip8()
